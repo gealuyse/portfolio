@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natthapath Damrongsri — Making the complex, clear</title>
+  <meta name="description"
+    content="Portfolio of Natthapath Damrongsri — UX/UI Designer in Bangkok. Crafting user-centered solutions to improve usability, accessibility, and efficiency.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="is-loading">
+
+  <!-- ─── Custom Cursor ─────────────────────────────────────── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ─── Loader ────────────────────────────────────────────── -->
+  <div id="loader">
+    <span id="loader-text">Loading</span>
+    <div id="loader-bar-track">
+      <div id="loader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- ─── Header ────────────────────────────────────────────── -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">ND.</a>
+      <nav class="header__nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO SECTION — Scroll-Driven SVG Wireframe Assembly
+       Theme: "Making the complex, clear"
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-sticky">
+      <div class="svg-container">
+        <svg viewBox="0 0 800 1000">
+          <!-- Trace Layer — structural guides -->
+          <g id="traceLayer">
+            <line class="trace axis" x1="220" y1="0" x2="220" y2="1000" />
+            <line class="trace axis" x1="580" y1="0" x2="580" y2="1000" />
+            <line class="trace bounds" x1="240" y1="0" x2="240" y2="1000" />
+            <line class="trace bounds" x1="560" y1="0" x2="560" y2="1000" />
+          </g>
+
+          <!-- Fragment Layer — wireframe pieces -->
+          <g id="fragmentLayer">
+            <!-- Corners -->
+            <polyline id="f-c-tl" class="frag" points="220,240 220,180 280,180" />
+            <polyline id="f-c-tr" class="frag" points="520,180 580,180 580,240" />
+            <polyline id="f-c-bl" class="frag" points="220,760 220,820 280,820" />
+            <polyline id="f-c-br" class="frag" points="520,820 580,820 580,760" />
+
+            <!-- Edges -->
+            <line id="f-e-l" class="frag" x1="220" y1="240" x2="220" y2="760" />
+            <line id="f-e-r" class="frag" x1="580" y1="240" x2="580" y2="760" />
+
+            <!-- Nav -->
+            <line id="f-nav-txt" class="frag" x1="240" y1="210" x2="280" y2="210" />
+            <line id="f-nav-ico" class="frag" x1="540" y1="210" x2="560" y2="210" />
+            <line id="f-nav-div" class="frag" x1="220" y1="240" x2="580" y2="240" />
+
+            <!-- Text blocks -->
+            <line id="f-t1" class="frag" x1="240" y1="280" x2="400" y2="280" />
+            <line id="f-t2" class="frag" x1="240" y1="300" x2="340" y2="300" />
+
+            <!-- Image placeholder -->
+            <line id="f-img-t" class="frag" x1="240" y1="340" x2="560" y2="340" />
+            <line id="f-img-b" class="frag" x1="240" y1="540" x2="560" y2="540" />
+            <line id="f-img-l" class="frag" x1="240" y1="340" x2="240" y2="540" />
+            <line id="f-img-r" class="frag" x1="560" y1="340" x2="560" y2="540" />
+            <line id="f-img-diag" class="frag" x1="240" y1="340" x2="560" y2="540" />
+
+            <!-- List items -->
+            <line id="f-l1" class="frag" x1="240" y1="580" x2="480" y2="580" />
+            <line id="f-l2" class="frag" x1="240" y1="610" x2="480" y2="610" />
+            <line id="f-l3" class="frag" x1="240" y1="640" x2="400" y2="640" />
+            <line id="f-l4" class="frag" x1="240" y1="670" x2="440" y2="670" />
+
+            <!-- CTA -->
+            <polyline id="f-cta-l" class="frag" points="400,720 240,720 240,780 400,780" />
+            <polyline id="f-cta-r" class="frag" points="400,720 560,720 560,780 400,780" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text revealed after assembly completes -->
+      <div class="hero-content">
+        <p class="hero-name">Natthapath Damrongsri</p>
+        <h1>Making the complex, clear.</h1>
+        <p class="hero-subtitle">UX/UI Designer in Bangkok — Crafting user-centered solutions to improve usability,
+          accessibility, and efficiency.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-label reveal">About</div>
+      <div class="about__grid">
+        <div class="reveal">
+          <h2 class="about__heading">I bridge the gap between design and reality.</h2>
+        </div>
+        <div class="reveal">
+          <p class="about__text">
+            Complexity is the natural state of data-driven systems. My role is to strip away the noise until only the
+            essence remains — making interfaces feel intuitive, efficient, and trustworthy.
+          </p>
+          <div class="tags">
+            <span class="tag">Usability</span>
+            <span class="tag">Efficiency</span>
+            <span class="tag">Systems Thinking</span>
+            <span class="tag">Accessibility</span>
+            <span class="tag">Design Systems</span>
+            <span class="tag">Prototyping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       WORK SECTION — Professional Projects
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="work" class="work section">
+    <div class="container">
+      <div class="section-label reveal">Selected Work</div>
+
+      <div class="project-list stagger-group">
+
+        <!-- Project 01: Naaraan -->
+        <article class="project-card stagger-item reveal">
+          <div class="project-card__image">
+            <span class="project-card__image-placeholder">Naaraan</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__number">01</span>
+            <h3 class="project-card__title">Naaraan</h3>
+            <p class="project-card__desc">
+              Designed Naaraan, an e-commerce platform empowering SMEs to easily create online stores.
+            </p>
+            <a href="#" class="project-card__link">
+              View Project <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 02: Customer Data Platform -->
+        <article class="project-card stagger-item reveal">
+          <div class="project-card__image">
+            <span class="project-card__image-placeholder">CDP</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__number">02</span>
+            <h3 class="project-card__title">Customer Data Platform</h3>
+            <p class="project-card__desc">
+              CDP is a software system that collects, organizes, and centralizes customer data from multiple sources to
+              create a unified customer profile.
+            </p>
+            <a href="#" class="project-card__link">
+              View Project <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 03: Counter Service -->
+        <article class="project-card stagger-item reveal">
+          <div class="project-card__image">
+            <span class="project-card__image-placeholder">Counter Service</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__number">03</span>
+            <h3 class="project-card__title">Counter Service</h3>
+            <p class="project-card__desc">
+              Redesigned Counter Service, 7-Eleven's POS system, optimizing it for small screens and hardware to create a
+              faster, more seamless checkout experience.
+            </p>
+            <a href="#" class="project-card__link">
+              View Project <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 04: Time Attendance -->
+        <article class="project-card stagger-item reveal">
+          <div class="project-card__image">
+            <span class="project-card__image-placeholder">Time Attendance</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__number">04</span>
+            <h3 class="project-card__title">Time Attendance</h3>
+            <p class="project-card__desc">
+              Enterprise time and attendance tracking system designed for clarity and ease of daily use across large teams.
+            </p>
+            <a href="#" class="project-card__link">
+              View Project <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PERSONAL PROJECTS SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="personal" class="personal section">
+    <div class="container">
+      <div class="section-label reveal">Personal Projects</div>
+
+      <div class="personal-list stagger-group">
+
+        <!-- Showtime Swipe -->
+        <a href="#" class="personal-card stagger-item reveal">
+          <div>
+            <h3 class="personal-card__title">Showtime Swipe</h3>
+            <p class="personal-card__desc">
+              Showtime Swipe aggregating cinema showtimes from multiple distributors into one platform.
+            </p>
+          </div>
+          <span class="personal-card__arrow">→</span>
+        </a>
+
+        <!-- UX Research Study -->
+        <a href="#" class="personal-card stagger-item reveal">
+          <div>
+            <h3 class="personal-card__title">UX Research Study — Grocery Delivery</h3>
+            <p class="personal-card__desc">
+              Studying Thai online grocery app UX via user interviews to improve user experience.
+            </p>
+          </div>
+          <span class="personal-card__arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER / CONTACT SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="section-label reveal">Contact</div>
+
+      <h2 class="footer__heading reveal">Let's work together.</h2>
+
+      <div class="footer__links reveal">
+        <a href="mailto:natthapath.d@gmail.com" class="footer__link">
+          <span class="footer__link-label">Email</span>
+          natthapath.d@gmail.com
+        </a>
+        <a href="tel:+66863693197" class="footer__link">
+          <span class="footer__link-label">Phone</span>
+          086 369 3197
+        </a>
+        <a href="https://www.linkedin.com/in/natthapath-damrongsri-63b698299/" target="_blank" rel="noopener"
+          class="footer__link">
+          <span class="footer__link-label">LinkedIn</span>
+          Natthapath Damrongsri
+        </a>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Natthapath Damrongsri</span>
+        <span>Making the complex, clear.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
